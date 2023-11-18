@@ -1,41 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
 :root {
+    --color-verde: #d4ff00;
+    --color-preto: #000000;
+    --color-cinza: #1e1d1d;
+
     --color-cinza1: #1c1d1e;
     --color-cinza2: #262728;
     --color-laranja: #ff3636;
-    --color-qbranco: #ededed;
+    --color-qbranco: #ffffff;
 }
 
-* {
-    font-family: "Ubuntu", sans-serif;
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
-    background-color: var(--color-qbranco);
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    background: linear-gradient(180deg, #d4ff00, #ffb100);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    display: grid;
+    gap: 20px;
+}
+
+.container,
+.split {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+}
+
+h1,
+h2,
+p {
+    color: var(--color-preto);
+    padding: 1rem;
     margin: 0;
-    padding: 0;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: clamp(6rem, 8vw, 8rem);
+    line-height: 1;
 }
 
 h2 {
-    font-size: 7rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 2rem;
 }
 
-.container {
+.code-container {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     width: 100%;
     max-width: 800px;
     margin: auto;
-    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    box-shadow: #0e0d0d;
 }
 
-.header {
+.header-box {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -46,7 +77,7 @@ h2 {
 
 .codebox {
     background-color: var(--color-cinza2);
-    color: var(--color-laranja);
+    color: var(--color-qbranco);
     border-radius: 5px;
     padding: 15px;
     width: 100%;
@@ -77,32 +108,76 @@ h2 {
     border-radius: 14px 1px;
 }
 
-/* Consultas de mídia para telas menores */
-@media (max-width: 600px) {
+footer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    padding: 1rem 0;
+}
+
+@media (max-width: 40em) {
     body {
-        display: flex; /* Alterar para flex para melhor controle do layout */
-        justify-content: center; /* Centralizar o conteúdo horizontalmente */
-        align-items: center; /* Centralizar o conteúdo verticalmente */
-        height: 100vh;
-        flex-direction: column; /* Organizar os elementos em uma coluna */
-        padding: 10px; /* Adicionar um pouco de espaço ao redor do conteúdo */
+        padding: 1rem;
     }
 
-    h2 {
-        font-size: 2rem; /* Reduzir ainda mais o tamanho da fonte do título para melhor visualização em telas menores */
-    }
-
+    .split,
     .container {
-        width: 100%; /* Permitir que o contêiner ocupe toda a largura da tela */
-        padding: 0 5%; /* Adicionar um pouco de preenchimento nas laterais para evitar que o conteúdo toque as bordas da tela */
+        width: 100%;
+        margin: 0;
     }
 
-    .codebox {
-        font-size: 0.875rem; /* Reduzir ainda mais o tamanho da fonte do código para melhor visualização em telas menores */
+    h1 {
+        font-size: clamp(4rem, 6vw, 6rem);
     }
 
-    .copybtn,
-    .username {
-        font-size: 0.875rem; /* Reduzir ainda mais o tamanho da fonte dos botões para melhor visualização em telas menores */
+    .code-container {
+        margin: 10px 0;
+        padding: 0.5rem;
+    }
+
+    footer {
+        padding: 1rem 0;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    p {
+        padding: 0.5rem;
+        margin: 0.5rem;
     }
 }
+
+/* Início do Scrollbar Colorido - @juniordelonge */
+
+/* Works on Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-verde) var(--color-cinza);
+}
+
+/* Works on Chrome, Edge, and Safari */
+
+*::-webkit-scrollbar {
+    width: 10px;
+    scrollbar-width: thin;
+}
+
+/* BG */
+
+*::-webkit-scrollbar-track {
+    background: var(--color-verde);
+}
+
+/* Thumb */
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-cinza);
+    border-radius: 10px;
+    border: 10px solid var(--color-cinza);
+}
+
+/* Fim do Scrollbar Colorido - @juniordelonge */
