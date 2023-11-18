@@ -132,12 +132,12 @@ footer {
     }
 
     .code-container {
-        margin: 10px 0;
+        margin: 5px -8px;
         padding: 0.5rem;
     }
 
     footer {
-        padding: 1rem 0;
+        padding: .5rem 0;
     }
 
     body,
