@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+:root {
+    --color-cinza1: #1c1d1e;
+    --color-cinza2: #262728;
+    --color-laranja: #ff3636;
+    --color-qbranco: #ededed;
+}
+
+* {
+    font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-qbranco);
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--color-cinza1);
+    border-radius: 13px 13px 2px 2px;
+    padding: 10px;
+}
+
+.codebox {
+    background-color: var(--color-cinza2);
+    color: var(--color-laranja);
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+    font-size: 16px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin-top: 2px;
+}
+
+.copybtn,
+.username {
+    background-color: var(--color-laranja);
+    color: var(--color-qbranco);
+    border: none;
+    padding: 7px 7px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.copybtn {
+    border-radius: 1px 14px;
+}
+
+.username {
+    border-radius: 14px 1px;
+}
+
+/* Consultas de mídia para telas menores */
+@media (max-width: 600px) {
+    body {
+        display: flex; /* Alterar para flex para melhor controle do layout */
+        justify-content: center; /* Centralizar o conteúdo horizontalmente */
+        align-items: center; /* Centralizar o conteúdo verticalmente */
+        height: 100vh;
+        flex-direction: column; /* Organizar os elementos em uma coluna */
+        padding: 10px; /* Adicionar um pouco de espaço ao redor do conteúdo */
+    }
+
+    h2 {
+        font-size: 2rem; /* Reduzir ainda mais o tamanho da fonte do título para melhor visualização em telas menores */
+    }
+
+    .container {
+        width: 100%; /* Permitir que o contêiner ocupe toda a largura da tela */
+        padding: 0 5%; /* Adicionar um pouco de preenchimento nas laterais para evitar que o conteúdo toque as bordas da tela */
+    }
+
+    .codebox {
+        font-size: 0.875rem; /* Reduzir ainda mais o tamanho da fonte do código para melhor visualização em telas menores */
+    }
+
+    .copybtn,
+    .username {
+        font-size: 0.875rem; /* Reduzir ainda mais o tamanho da fonte dos botões para melhor visualização em telas menores */
+    }
+}
